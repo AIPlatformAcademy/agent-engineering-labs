@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+material-instructor
+AGENTS.MD
+package-lock.json
+docs/
+laboratorio/
+.github/
+.DS_Store
