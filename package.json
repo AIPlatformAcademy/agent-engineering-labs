@@ -1,0 +1,31 @@
+{
+  "name": "unipay-agentic-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Laboratorio de ingeniería de agentes y SDLC con GitHub Copilot",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "check": "npm run lint && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^16.0.0",
+    "supertest": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}

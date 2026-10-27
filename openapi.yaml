@@ -1,0 +1,397 @@
+openapi: 3.0.3
+info:
+  title: UniPay API
+  version: 1.0.0
+  description: >
+    API educativa utilizada en el laboratorio UniPay para gestionar
+    estudiantes y transferencias de saldo.
+
+servers:
+  - url: http://localhost:3000
+    description: Entorno local
+
+tags:
+  - name: Sistema
+    description: Operaciones relacionadas con el estado de la aplicación
+
+  - name: Estudiantes
+    description: Operaciones relacionadas con estudiantes
+
+  - name: Transferencias
+    description: Operaciones relacionadas con transferencias
+
+paths:
+
+  /health:
+
+    get:
+      tags:
+        - Sistema
+      summary: Consultar el estado de la aplicación
+      operationId: getHealth
+
+      responses:
+
+        '200':
+          description: Aplicación disponible
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+
+  /api/students:
+
+    get:
+      tags:
+        - Estudiantes
+      summary: Listar estudiantes
+      operationId: getStudents
+
+      responses:
+
+        '200':
+          description: Lista de estudiantes
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentsResponse'
+
+
+  /api/students/{studentId}:
+
+    get:
+      tags:
+        - Estudiantes
+      summary: Consultar un estudiante
+      operationId: getStudentById
+
+      parameters:
+
+        - name: studentId
+          in: path
+          required: true
+          description: Identificador del estudiante
+
+          schema:
+            type: string
+
+          example: stu-001
+
+      responses:
+
+        '200':
+          description: Estudiante encontrado
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudentResponse'
+
+        '404':
+          description: Estudiante no encontrado
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+  /api/transfers:
+
+    get:
+      tags:
+        - Transferencias
+      summary: Listar transferencias
+      operationId: getTransfers
+
+      parameters:
+
+        - name: studentId
+          in: query
+          required: false
+          description: >
+            Permite recuperar las transferencias relacionadas
+            con un estudiante.
+
+          schema:
+            type: string
+
+          example: stu-001
+
+      responses:
+
+        '200':
+          description: Lista de transferencias
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransfersResponse'
+
+
+    post:
+      tags:
+        - Transferencias
+      summary: Crear una transferencia
+      operationId: createTransfer
+
+      requestBody:
+        required: true
+
+        content:
+          application/json:
+
+            schema:
+              $ref: '#/components/schemas/TransferRequest'
+
+            example:
+              senderId: stu-001
+              receiverId: stu-002
+              amount: 25
+              description: Almuerzo
+
+      responses:
+
+        '201':
+          description: Transferencia creada correctamente
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransferResponse'
+
+        '400':
+          description: Solicitud o datos inválidos
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+        '404':
+          description: Alguno de los estudiantes requeridos no existe
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+        '422':
+          description: La transferencia incumple una regla de negocio
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+        '500':
+          description: Error inesperado de la aplicación
+
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+
+components:
+
+  schemas:
+
+    HealthResponse:
+      type: object
+      required:
+        - status
+        - service
+
+      properties:
+
+        status:
+          type: string
+          example: UP
+
+        service:
+          type: string
+          example: unipay-api
+
+
+    Student:
+      type: object
+      required:
+        - id
+        - name
+        - email
+        - balance
+
+      properties:
+
+        id:
+          type: string
+          example: stu-001
+
+        name:
+          type: string
+          example: Ana Torres
+
+        email:
+          type: string
+          format: email
+          example: ana.torres@unipay.edu.pe
+
+        balance:
+          type: number
+          format: double
+          example: 150
+
+
+    StudentResponse:
+      type: object
+      required:
+        - data
+
+      properties:
+
+        data:
+          $ref: '#/components/schemas/Student'
+
+
+    StudentsResponse:
+      type: object
+      required:
+        - data
+
+      properties:
+
+        data:
+          type: array
+
+          items:
+            $ref: '#/components/schemas/Student'
+
+
+    TransferRequest:
+      type: object
+      required:
+        - senderId
+        - receiverId
+        - amount
+
+      properties:
+
+        senderId:
+          type: string
+          example: stu-001
+
+        receiverId:
+          type: string
+          example: stu-002
+
+        amount:
+          type: number
+          format: double
+          example: 25
+
+        description:
+          type: string
+          example: Almuerzo
+
+
+    Transfer:
+      type: object
+      required:
+        - id
+        - senderId
+        - receiverId
+        - amount
+        - status
+        - createdAt
+
+      properties:
+
+        id:
+          type: string
+          format: uuid
+
+        senderId:
+          type: string
+          example: stu-001
+
+        receiverId:
+          type: string
+          example: stu-002
+
+        amount:
+          type: number
+          format: double
+          example: 25
+
+        description:
+          type: string
+          example: Almuerzo
+
+        status:
+          type: string
+          example: COMPLETED
+
+        createdAt:
+          type: string
+          format: date-time
+
+
+    TransferResponse:
+      type: object
+      required:
+        - data
+
+      properties:
+
+        data:
+          $ref: '#/components/schemas/Transfer'
+
+
+    TransfersResponse:
+      type: object
+      required:
+        - data
+
+      properties:
+
+        data:
+          type: array
+
+          items:
+            $ref: '#/components/schemas/Transfer'
+
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+        - requestId
+
+      properties:
+
+        code:
+          type: string
+          example: STUDENT_NOT_FOUND
+
+        message:
+          type: string
+          example: Student was not found
+
+        requestId:
+          type: string
+
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+
+      properties:
+
+        error:
+          $ref: '#/components/schemas/Error'
