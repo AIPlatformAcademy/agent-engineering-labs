@@ -8,16 +8,13 @@ export default [
       'coverage/**'
     ]
   },
-
   js.configs.recommended,
-
   {
     files: [
       'src/**/*.js',
       'tests/**/*.js',
       '*.config.js'
     ],
-
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -25,7 +22,6 @@ export default [
         ...globals.node
       }
     },
-
     rules: {
       'no-unused-vars': [
         'error',
@@ -35,12 +31,10 @@ export default [
       ]
     }
   },
-
   {
     files: [
       'tests/**/*.js'
     ],
-
     languageOptions: {
       globals: {
         ...globals.node,

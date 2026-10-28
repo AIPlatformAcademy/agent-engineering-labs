@@ -10,8 +10,6 @@ La implementación actual puede no cubrir todas las reglas documentadas.
 
 Cuando exista una diferencia entre una regla de negocio documentada y el comportamiento actual de la aplicación, debe considerarse la regla documentada como el comportamiento esperado.
 
----
-
 # Transferencias entre estudiantes
 
 Una transferencia representa el movimiento de saldo desde un estudiante emisor hacia un estudiante receptor.
@@ -25,8 +23,6 @@ amount
 description
 ```
 
----
-
 ## BR-001 - Existencia de estudiantes
 
 Tanto el estudiante emisor como el estudiante receptor deben existir.
@@ -38,8 +34,6 @@ Error esperado:
 ```text
 STUDENT_NOT_FOUND
 ```
-
----
 
 ## BR-002 - Transferencia al mismo estudiante
 
@@ -58,8 +52,6 @@ Error esperado:
 ```text
 SAME_STUDENT_TRANSFER
 ```
-
----
 
 ## BR-003 - Importe válido
 
@@ -83,8 +75,6 @@ Error esperado:
 ```text
 INVALID_AMOUNT
 ```
-
----
 
 ## BR-004 - Precisión del importe
 
@@ -131,8 +121,6 @@ Error esperado:
 INSUFFICIENT_BALANCE
 ```
 
----
-
 ## BR-006 - Balance no negativo
 
 Una transferencia nunca puede provocar que el balance del estudiante emisor quede en negativo.
@@ -152,8 +140,6 @@ Error esperado:
 ```text
 INSUFFICIENT_BALANCE
 ```
-
----
 
 ## BR-007 - Límite máximo por transferencia
 
@@ -189,8 +175,6 @@ Error esperado:
 AMOUNT_LIMIT_EXCEEDED
 ```
 
----
-
 ## BR-008 - Descripción
 
 La descripción de una transferencia es opcional.
@@ -208,8 +192,6 @@ Error esperado:
 ```text
 INVALID_DESCRIPTION
 ```
-
----
 
 ## BR-009 - Registro de transferencias
 
@@ -234,8 +216,6 @@ COMPLETED
 ```
 
 Una transferencia rechazada no debe registrarse como transferencia completada.
-
----
 
 ## BR-010 - Consistencia de la operación
 
@@ -270,8 +250,6 @@ Si alguna validación falla:
 - el balance del receptor debe permanecer sin cambios;
 - no debe registrarse una transferencia completada.
 
----
-
 # Invariantes
 
 Independientemente del tipo de transferencia, deben mantenerse los siguientes invariantes:
@@ -287,8 +265,6 @@ Una transferencia válida modifica ambos balances.
 
 Una transferencia válida queda registrada.
 ```
-
----
 
 # Regla de implementación
 

@@ -4,8 +4,6 @@ Has construido todas las piezas.
 
 Ahora vamos a utilizarlas juntas sobre una misión real.
 
----
-
 # 🚨 Tu misión
 
 Existe un incidente en UniPay:
@@ -30,8 +28,6 @@ No añadas pistas.
 
 Deja que el agente descubra cómo abordar la misión.
 
----
-
 # 👀 Observa
 
 Comprueba si el agente consigue:
@@ -50,8 +46,6 @@ Comprueba si el agente consigue:
 [ ] Validar el resultado.
 ```
 
----
-
 # 🔎 Revisa la evidencia
 
 Al finalizar deberías poder responder:
@@ -67,8 +61,6 @@ Al finalizar deberías poder responder:
 
 ¿Cómo validó la solución?
 ```
-
----
 
 # 🏁 Misión completada
 
@@ -88,8 +80,6 @@ flowchart LR
     D --> E["🛠️ Corrección"]
     E --> F["✅ Validación"]
 ```
-
----
 
 # ⭐ Lo que construiste
 

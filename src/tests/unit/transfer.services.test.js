@@ -1,25 +1,8 @@
-import {
-  beforeEach,
-  describe,
-  expect,
-  it
-} from 'vitest';
-
-import {
-  createTransfer,
-  getTransfers
-} from '../../../src/services/transfer.service.js';
-
-import {
-  findStudentById
-} from '../../../src/repositories/student.repository.js';
-import {
-  findAllTransfers
-} from '../../../src/repositories/transfer.repository.js';
-
-import {
-  resetData
-} from '../helpers/reset-data.js';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { createTransfer, getTransfers } from '../../../src/services/transfer.service.js';
+import { findStudentById } from '../../../src/repositories/student.repository.js';
+import { findAllTransfers } from '../../../src/repositories/transfer.repository.js';
+import { resetData } from '../helpers/reset-data.js';
 
 describe('transfer service', () => {
   beforeEach(resetData);

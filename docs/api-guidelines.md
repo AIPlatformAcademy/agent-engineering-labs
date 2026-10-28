@@ -6,8 +6,6 @@ Este documento define las convenciones que deben respetar los endpoints HTTP de 
 
 Los cambios en la aplicación deben preservar estas convenciones salvo que un requerimiento indique explícitamente lo contrario.
 
----
-
 # Formato
 
 La API utiliza:
@@ -22,8 +20,6 @@ Los requests que contienen información en el body deben utilizar:
 ```text
 Content-Type: application/json
 ```
-
----
 
 # Respuestas correctas
 
@@ -42,8 +38,6 @@ Para colecciones:
   "data": []
 }
 ```
-
----
 
 # Respuestas de error
 
@@ -65,8 +59,6 @@ El objetivo de `code` es proporcionar un código estable que permita identificar
 
 `requestId` permite correlacionar el error con la solicitud HTTP.
 
----
-
 # Códigos HTTP
 
 ## 200 OK
@@ -81,8 +73,6 @@ GET /api/students/:studentId
 GET /api/transfers
 ```
 
----
-
 ## 201 Created
 
 Utilizar cuando se crea correctamente una transferencia.
@@ -92,8 +82,6 @@ Ejemplo:
 ```text
 POST /api/transfers
 ```
-
----
 
 ## 400 Bad Request
 
@@ -107,16 +95,12 @@ transferencia al mismo estudiante
 descripción inválida
 ```
 
----
-
 ## 404 Not Found
 
 Utilizar cuando:
 
 - un recurso requerido no existe;
 - la ruta solicitada no existe.
-
----
 
 ## 422 Unprocessable Entity
 
@@ -129,15 +113,11 @@ saldo insuficiente
 límite de transferencia excedido
 ```
 
----
-
 ## 500 Internal Server Error
 
 Utilizar para errores inesperados no representados mediante un error de aplicación conocido.
 
 No se deben exponer detalles internos del error al cliente.
-
----
 
 # Endpoints
 
@@ -155,8 +135,6 @@ Respuesta:
   "service": "unipay-api"
 }
 ```
-
----
 
 ## Listar estudiantes
 
@@ -178,8 +156,6 @@ Respuesta:
   ]
 }
 ```
-
----
 
 ## Consultar estudiante
 
@@ -206,8 +182,6 @@ Respuesta:
 }
 ```
 
----
-
 ## Listar transferencias
 
 ```text
@@ -227,8 +201,6 @@ Ejemplo:
 ```text
 GET /api/transfers?studentId=stu-001
 ```
-
----
 
 ## Crear transferencia
 
@@ -262,8 +234,6 @@ Respuesta correcta:
   }
 }
 ```
-
----
 
 # Compatibilidad
 

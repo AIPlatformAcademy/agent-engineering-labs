@@ -26,8 +26,6 @@ Hasta que llega la siguiente tarea...
 
 y vuelves a escribir las mismas reglas.
 
----
-
 # El problema
 
 Nuestro prompt está mezclando dos cosas:
@@ -48,8 +46,6 @@ Explícame primero el plan.
 El **QUÉ** cambia con cada tarea.
 
 El **CÓMO** suele permanecer.
-
----
 
 # 💡 ¿Y si el proyecto recordara el CÓMO?
 
@@ -103,8 +99,6 @@ INSTRUCTIONS
 ¿Cómo queremos trabajar?
 ```
 
----
-
 # ¿Qué debería ser una Instruction?
 
 Hazte esta pregunta:
@@ -129,8 +123,6 @@ Es una tarea concreta.
 
 Pertenece al prompt.
 
----
-
 # Un detalle más
 
 No todas las Instructions tienen que tener el mismo alcance.
@@ -151,13 +143,9 @@ También existen instrucciones específicas para determinados archivos:
 
 En este laboratorio comenzaremos con las instrucciones generales del repositorio.
 
----
-
 # En una frase
 
 > **El Prompt define la tarea. Las Instructions definen cómo queremos trabajar.**
-
----
 
 # Ahora vamos a comprobarlo
 
@@ -186,5 +174,5 @@ CON Instructions
 Continúa con:
 
 ```text
-02-demo-sin-instructions.md
+02-demo-instructions.md
 ```

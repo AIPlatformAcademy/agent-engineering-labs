@@ -14,8 +14,6 @@ AGENTS.md
 
 y asegúrate de comenzar con el archivo vacío.
 
----
-
 # 🧩 El reto
 
 UniPay tiene estas fuentes de conocimiento:
@@ -49,8 +47,6 @@ Tu `AGENTS.md` debe ayudar a encontrar conocimiento sobre:
 🎫 Tickets
 ```
 
----
-
 # 💡 ¿Qué debes definir?
 
 Para cada categoría responde únicamente:
@@ -70,8 +66,6 @@ Cuando necesites comprender las responsabilidades entre capas, consulta:
 
 - `docs/architecture.md`
 ```
-
----
 
 # 🚧 Recuerda
 
@@ -96,8 +90,6 @@ La regla real pertenece a:
 ```text
 docs/
 ```
-
----
 
 # 🛠️ Construye tu mapa
 
@@ -139,15 +131,11 @@ No copies las respuestas utilizadas en la demo.
 
 Utiliza los documentos del repositorio para completar tu propio mapa.
 
----
-
 # 🧪 Prueba tu mapa
 
 No repetiremos los escenarios de la demo.
 
 Ahora comprobaremos otras partes de tu `AGENTS.md`.
-
----
 
 ## 🌐 Prueba 1 — API
 
@@ -170,8 +158,6 @@ docs/api-guidelines.md
 openapi.yaml
 ```
 
----
-
 ## 🧪 Prueba 2 — Testing
 
 Abre un chat nuevo y ejecuta:
@@ -191,8 +177,6 @@ Tu mapa debería permitir localizar:
 ```text
 docs/testing-guidelines.md
 ```
-
----
 
 ## 🎫 Prueba 3 — Tickets
 
@@ -216,8 +200,6 @@ docs/tickets/UL-102-negative-balance-incident.md
 
 > En esta prueba solo estamos comprobando que el agente pueda localizar el ticket. Todavía no vamos a resolverlo.
 
----
-
 # ✅ Reto completado
 
 Tu `AGENTS.md` está listo si:
@@ -238,8 +220,6 @@ Tu `AGENTS.md` está listo si:
 [ ] Permite ampliar contexto cuando aparece una nueva necesidad.
 ```
 
----
-
 # ⭐ Qué debes recordar
 
 ```text
@@ -255,8 +235,6 @@ y CUÁNDO ampliarlo
 ```
 
 > **Un buen AGENTS.md no contiene todo el conocimiento. Ayuda a encontrar el adecuado cuando se necesita.**
-
----
 
 # 🚀 Siguiente nivel
 

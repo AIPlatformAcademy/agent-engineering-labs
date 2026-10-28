@@ -24,8 +24,6 @@ Durante la demo:
 ✅ Utiliza un chat nuevo para cada experimento.
 ```
 
----
-
 # 🧪 Experimento 1 — AGENTS.md
 
 Usaremos la misma tarea y el mismo prompt.
@@ -39,8 +37,6 @@ vs.
 
 🟢 AGENTS.md con un mapa mínimo
 ```
-
----
 
 ## 🔴 Prueba A — Sin AGENTS.md
 
@@ -73,8 +69,6 @@ No propongas una solución.
 No buscamos que Copilot se equivoque.
 
 Queremos observar cómo encuentra el contexto sin un mapa explícito.
-
----
 
 ## 🟢 Prueba B — Con AGENTS.md
 
@@ -134,8 +128,6 @@ No evaluamos si la segunda respuesta es mejor.
 
 Evaluamos si ahora existe una guía explícita sobre dónde buscar.
 
----
-
 ## ⭐ ¿Qué aprendimos?
 
 ```text
@@ -148,8 +140,6 @@ CON AGENTS.md
 ↓
 Copilot dispone de un mapa explícito.
 ```
-
----
 
 # 🧪 Experimento 2 — Progressive Disclosure
 
@@ -164,8 +154,6 @@ docs/business-rules.md
 ```
 
 Ahora ampliaremos el contexto solo cuando aparezca una nueva necesidad.
-
----
 
 ## 1️⃣ La operación puede ser rechazada
 
@@ -185,8 +173,6 @@ Busca evidencia de que identifica:
 docs/error-catalog.md
 ```
 
----
-
 ## 2️⃣ Necesitamos localizar la responsabilidad
 
 Continúa:
@@ -203,8 +189,6 @@ Busca evidencia de que identifica:
 docs/architecture.md
 ```
 
----
-
 ## 🔎 Observa la progresión
 
 ```mermaid
@@ -219,8 +203,6 @@ flowchart LR
 El contexto creció conforme apareció una nueva necesidad.
 
 No cargamos todos los documentos al principio.
-
----
 
 # ⭐ Qué debes recordar
 
@@ -238,8 +220,6 @@ y CUÁNDO ampliarlo
 
 > **AGENTS.md nos indica dónde buscar. Progressive Disclosure nos ayuda a ampliar el contexto cuando aparece una nueva necesidad.**
 
----
-
 # 🧹 Antes de continuar
 
 El `AGENTS.md` usado en esta demo es solo un ejemplo mínimo.
@@ -251,8 +231,6 @@ AGENTS.md
 ```
 
 En el siguiente desafío construirás el mapa completo de UniPay.
-
----
 
 # 🚀 Tu turno
 

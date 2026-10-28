@@ -1,18 +1,6 @@
-import {
-  beforeEach,
-  describe,
-  expect,
-  it
-} from 'vitest';
-
-import {
-  getAllStudents,
-  getStudent
-} from '../../../src/services/student.service.js';
-
-import {
-  resetData
-} from '../helpers/reset-data.js';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { getAllStudents, getStudent } from '../../../src/services/student.service.js';
+import { resetData } from '../helpers/reset-data.js';
 
 describe('student service', () => {
   beforeEach(resetData);

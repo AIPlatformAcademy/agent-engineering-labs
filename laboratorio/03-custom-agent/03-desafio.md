@@ -21,8 +21,6 @@ Tengo un problema.
 
 y elegir una estrategia diferente para cada uno.
 
----
-
 # 🧩 Empieza desde aquí
 
 Copia esta base:
@@ -58,8 +56,6 @@ Resume:
 - estrategia;
 - resultado.
 ```
-
----
 
 # 💡 Ejemplo para empezar
 
@@ -106,8 +102,6 @@ Busco contexto
 Valido
 ```
 
----
-
 # 🚨 Diseña INCIDENT
 
 Utiliza la misma idea:
@@ -132,8 +126,6 @@ Pregúntate:
 
 > **Si todavía no sé por qué falla, ¿qué debería hacer antes de corregirlo?**
 
----
-
 # 🚧 No dupliques
 
 ```text
@@ -153,8 +145,6 @@ QUÉ ESTRATEGIA ejecutar
 ```
 
 Tu agente debe centrarse en la estrategia.
-
----
 
 # 🧪 Pruébalo
 
@@ -183,8 +173,6 @@ ISSUE
 en una solución?
 ```
 
----
-
 ## 🚨 INCIDENT
 
 Abre un chat nuevo:
@@ -206,8 +194,6 @@ INCIDENT
 la causa antes de corregirla?
 ```
 
----
-
 # ✅ Reto completado
 
 ```text
@@ -219,8 +205,6 @@ la causa antes de corregirla?
 
 [ ] No duplica Instructions ni documentación.
 ```
-
----
 
 # ⭐ Qué debes recordar
 

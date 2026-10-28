@@ -12,8 +12,6 @@ Ahora aparece una nueva pregunta:
 
 > **¿Dónde encuentra el conocimiento que necesita?**
 
----
-
 # 📚 El conocimiento está distribuido
 
 UniPay tiene distintas fuentes:
@@ -31,8 +29,6 @@ openapi.yaml
 ```
 
 Dependiendo de la tarea, Copilot necesitará consultar información diferente.
-
----
 
 # 💡 AGENTS.md
 
@@ -68,8 +64,6 @@ flowchart LR
     B --> C["Contexto relevante"]
 ```
 
----
-
 # 🤔 ¿Y debemos cargar todo?
 
 No.
@@ -83,8 +77,6 @@ openapi.yaml
 
 Y ampliar el contexto después si lo necesita.
 
----
-
 # 💡 Progressive Disclosure
 
 **Progressive Disclosure es una técnica que empieza con el contexto mínimo y añade más información solo cuando es necesaria.**
@@ -96,8 +88,6 @@ flowchart LR
     C --> B
     B -->|No| D["Continuar"]
 ```
-
----
 
 # ⭐ Qué debes recordar
 
@@ -113,8 +103,6 @@ PROGRESSIVE DISCLOSURE
 ```
 
 > **No necesitamos cargar todo el conocimiento. Necesitamos encontrar el conocimiento adecuado en el momento adecuado.**
-
----
 
 # 🧪 Vamos a comprobarlo
 

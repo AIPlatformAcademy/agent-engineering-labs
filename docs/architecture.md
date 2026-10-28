@@ -31,8 +31,6 @@ HTTP Request
 
 Las respuestas recorren el flujo inverso hasta regresar al cliente.
 
----
-
 ## Estructura de la aplicación
 
 ```text
@@ -68,8 +66,6 @@ src/
     └── seed.js
 ```
 
----
-
 # Capas
 
 ## Routes
@@ -99,8 +95,6 @@ Los Routes no deben:
 - acceder directamente a datos;
 - modificar entidades;
 - decidir errores de negocio.
-
----
 
 ## Controllers
 
@@ -135,8 +129,6 @@ Los Controllers no deben:
 - modificar entidades directamente;
 - implementar lógica que debería pertenecer a un Service.
 
----
-
 ## Services
 
 Los Services contienen la lógica de aplicación y las reglas de negocio.
@@ -168,8 +160,6 @@ Service
 
 Si una nueva regla determina si una transferencia puede o no ejecutarse, esa regla debe implementarse en el Service correspondiente.
 
----
-
 ## Repositories
 
 Los Repositories proporcionan acceso a los datos utilizados por la aplicación.
@@ -192,8 +182,6 @@ En el laboratorio, los Repositories utilizan almacenamiento en memoria.
 
 No existe una base de datos externa.
 
----
-
 ## Middleware
 
 Los Middleware gestionan preocupaciones transversales relacionadas con el procesamiento de requests HTTP.
@@ -213,8 +201,6 @@ Gestiona solicitudes realizadas a rutas que no existen.
 ### `error-handler.js`
 
 Centraliza la transformación de errores de aplicación en respuestas HTTP.
-
----
 
 ## ApplicationError
 
@@ -236,8 +222,6 @@ Las reglas de negocio deben generar errores de aplicación cuando una operación
 
 El middleware global es responsable de transformar esos errores en respuestas HTTP.
 
----
-
 # Principios arquitectónicos
 
 Al modificar UniPay deben respetarse los siguientes principios:
@@ -250,8 +234,6 @@ Al modificar UniPay deben respetarse los siguientes principios:
 6. Utilizar el mecanismo centralizado de errores.
 7. Evitar introducir nuevas capas si el requerimiento puede resolverse con la arquitectura existente.
 8. Evitar modificar componentes no relacionados con el requerimiento.
-
----
 
 # Regla para cambios
 

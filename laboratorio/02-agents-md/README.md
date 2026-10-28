@@ -4,8 +4,6 @@
 
 Aprender a guiar a Copilot hacia el conocimiento adecuado sin cargar toda la documentación del proyecto.
 
----
-
 ## 🧭 Recorrido
 
 ```mermaid
@@ -34,8 +32,6 @@ Después comprobarás cómo el contexto puede ampliarse solo cuando sea necesari
 
 Crearás y probarás el `AGENTS.md` de UniPay.
 
----
-
 ## ⭐ Al finalizar
 
 Podrás explicar:
@@ -50,8 +46,6 @@ PROGRESSIVE DISCLOSURE
 ↓
 ¿QUÉ contexto necesito ahora?
 ```
-
----
 
 ## 🚀 Empecemos
 

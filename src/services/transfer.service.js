@@ -1,18 +1,6 @@
-import {
-  findStudentById,
-  updateStudentBalance
-} from '../repositories/student.repository.js';
-
-import {
-  findAllTransfers,
-  saveTransfer
-} from '../repositories/transfer.repository.js';
-
-import {
-  ApplicationError
-} from '../errors/application-error.js';
-
-
+import { findStudentById, updateStudentBalance } from '../repositories/student.repository.js';
+import { findAllTransfers, saveTransfer } from '../repositories/transfer.repository.js';
+import { ApplicationError } from '../errors/application-error.js';
 
 export function getTransfers(studentId) {
   const transfers = findAllTransfers();
@@ -69,5 +57,4 @@ export function createTransfer({
     amount,
     description
   });
-
 }

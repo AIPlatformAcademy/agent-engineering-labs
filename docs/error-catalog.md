@@ -6,8 +6,6 @@ Este documento define los códigos de error conocidos utilizados por UniPay.
 
 Los consumidores de la API pueden utilizar estos códigos para identificar programáticamente el motivo de un error.
 
----
-
 # Formato estándar
 
 Los errores utilizan:
@@ -22,8 +20,6 @@ Los errores utilizan:
 }
 ```
 
----
-
 # Errores
 
 ## STUDENT_NOT_FOUND
@@ -37,8 +33,6 @@ HTTP:
 Se produce cuando el estudiante requerido por una operación no existe.
 
 Aplica tanto al emisor como al receptor de una transferencia.
-
----
 
 ## ROUTE_NOT_FOUND
 
@@ -56,8 +50,6 @@ Ejemplo:
 GET /api/unknown
 ```
 
----
-
 ## SAME_STUDENT_TRANSFER
 
 HTTP:
@@ -73,8 +65,6 @@ senderId == receiverId
 ```
 
 Un estudiante no puede transferirse saldo a sí mismo.
-
----
 
 ## INVALID_AMOUNT
 
@@ -96,8 +86,6 @@ importe negativo
 importe con más de dos decimales
 ```
 
----
-
 ## INVALID_DESCRIPTION
 
 HTTP:
@@ -116,8 +104,6 @@ docs/business-rules.md
 
 para conocer las restricciones de negocio correspondientes.
 
----
-
 ## AMOUNT_LIMIT_EXCEEDED
 
 HTTP:
@@ -134,8 +120,6 @@ El valor del límite debe obtenerse de:
 docs/business-rules.md
 ```
 
----
-
 ## INSUFFICIENT_BALANCE
 
 HTTP:
@@ -148,8 +132,6 @@ Se produce cuando el estudiante emisor no dispone de saldo suficiente para compl
 
 Una operación rechazada por este motivo no debe modificar balances ni registrar una transferencia completada.
 
----
-
 ## INTERNAL_ERROR
 
 HTTP:
@@ -161,8 +143,6 @@ HTTP:
 Se utiliza cuando ocurre un error inesperado que no corresponde a un error conocido de aplicación.
 
 La respuesta pública no debe revelar detalles técnicos internos del error.
-
----
 
 # Tabla resumen
 

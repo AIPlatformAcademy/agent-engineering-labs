@@ -8,15 +8,11 @@ Documentación oficial de GitHub sobre instrucciones de repositorio:
 
 https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide 
 
----
-
 ### Personalización de Copilot
 
 Documentación general sobre Custom Instructions:
 
 https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions 
-
----
 
 ## Microsoft Learn
 
@@ -34,29 +30,16 @@ Portal:
 
 [Microsoft Learn - GitHub Copilot](https://learn.microsoft.com/es-es/training/paths/accelerate-app-development-using-github-copilot/)
 
----
-
 ## Reflexión final
 
 Recuerda:
 
 ```text
-Prompt
-=
-¿Qué quiero hacer?
+Prompt = ¿Qué quiero hacer?
 
+Instructions = ¿Cómo quiero que trabajes?
 
-Instructions
-=
-¿Cómo quiero que trabajes?
+AGENTS.md = ¿Dónde está el conocimiento?
 
-
-AGENTS.md
-=
-¿Dónde está el conocimiento?
-
-
-Agent
-=
-¿Cómo ejecuto el trabajo?
+Agent = ¿Cómo ejecuto el trabajo?
 ```

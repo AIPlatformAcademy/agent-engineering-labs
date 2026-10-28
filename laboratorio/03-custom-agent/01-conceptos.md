@@ -17,8 +17,6 @@ Y con Progressive Disclosure podemos ampliar el contexto cuando lo necesitamos.
 
 Pero todavía somos nosotros quienes dirigimos el proceso.
 
----
-
 # 🤔 Falta una pieza
 
 Ante cada tarea seguimos diciendo:
@@ -39,8 +37,6 @@ Valida.
 
 > **¿Y si pudiéramos convertir ese proceso en un especialista reutilizable?**
 
----
-
 # 💡 Custom Agent
 
 Un **Custom Agent** es una configuración reutilizable especializada en un rol o tipo de trabajo.
@@ -58,8 +54,6 @@ en:
 ```text
 .github/agents/unipay-sdlc-engineer.agent.md
 ```
-
----
 
 # 🧠 ¿Qué aporta?
 
@@ -94,13 +88,9 @@ CUSTOM AGENT
 Especialista + Estrategia
 ```
 
----
-
 # 🔀 Pero no todas las misiones son iguales
 
 Nuestro especialista trabajará con dos tipos.
-
----
 
 ## 🛠️ ISSUE
 
@@ -139,8 +129,6 @@ IMPLEMENTAR
 VALIDAR
 ```
 
----
-
 ## 🚨 INCIDENT
 
 Un Incident nos dice:
@@ -178,8 +166,6 @@ CORREGIR
 VALIDAR
 ```
 
----
-
 # ⚖️ La diferencia
 
 ```mermaid
@@ -213,8 +199,6 @@ Sé QUÉ está fallando
 DIAGNOSTICO por qué
 ```
 
----
-
 # ⭐ Qué debes recordar
 
 ```text
@@ -237,8 +221,6 @@ Diagnosticar
 ```
 
 > **Instructions definen reglas. AGENTS.md guía hacia el conocimiento. El Custom Agent decide cómo abordar la misión.**
-
----
 
 # 🧪 Vamos a comprobarlo
 

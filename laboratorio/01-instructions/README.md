@@ -4,8 +4,6 @@
 
 Aprender a utilizar Copilot Instructions para preparar UniPay para trabajar con GitHub Copilot.
 
----
-
 ## 🧭 Recorrido
 
 ```mermaid
@@ -31,8 +29,6 @@ Compararás el mismo escenario:
 ### 🛠️ Construir
 
 Crearás y probarás las Instructions de UniPay.
-
----
 
 ## 🚀 Empecemos
 
