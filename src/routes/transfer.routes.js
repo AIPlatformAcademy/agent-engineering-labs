@@ -1,9 +1,5 @@
 import { Router } from 'express';
-
-import {
-  listTransfers,
-  postTransfer
-} from '../controllers/transfer.controller.js';
+import { listTransfers, postTransfer } from '../controllers/transfer.controller.js';
 
 export const transferRouter = Router();
 

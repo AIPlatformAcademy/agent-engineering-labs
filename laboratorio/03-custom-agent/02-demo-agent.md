@@ -10,8 +10,6 @@ MISMO AGENTE
 DOS MISIONES
 ```
 
----
-
 # 🛠️ Prepara el agente
 
 Abre:
@@ -56,8 +54,6 @@ Selecciona en GitHub Copilot:
 UniPay SDLC Engineer Demo
 ```
 
----
-
 # 🧪 Prueba 1 — Nueva capacidad
 
 Abre un chat nuevo y ejecuta:
@@ -85,8 +81,6 @@ ISSUE
 ```text
 Sabemos QUÉ queremos construir.
 ```
-
----
 
 # 🧪 Prueba 2 — Algo está fallando
 
@@ -119,8 +113,6 @@ Sabemos QUÉ está fallando,
 pero todavía no sabemos POR QUÉ.
 ```
 
----
-
 # ⚖️ Compara
 
 ```mermaid
@@ -134,8 +126,6 @@ flowchart TD
 El especialista es el mismo.
 
 La misión cambia.
-
----
 
 # 💡 Pero todavía falta algo
 
@@ -170,8 +160,6 @@ INCIDENT
 
 Eso será tu desafío.
 
----
-
 # 🧩 Recuerda cómo se conectan las piezas
 
 ```text
@@ -194,8 +182,6 @@ El Custom Agent no reemplaza las piezas anteriores.
 
 Las utiliza para ejecutar su misión.
 
----
-
 # ⭐ Qué debes recordar
 
 ```text
@@ -211,8 +197,6 @@ Tengo un problema
 
 Ahora necesitamos enseñar al especialista **qué estrategia utilizar en cada caso**.
 
----
-
 # 🧹 Antes de continuar
 
 El agente utilizado en esta demo es solo un ejemplo para aprender a clasificar misiones.
@@ -222,8 +206,6 @@ Vacía nuevamente:
 ```text
 .github/agents/unipay-sdlc-engineer.agent.md
 ```
-
----
 
 # 🚀 Tu turno
 

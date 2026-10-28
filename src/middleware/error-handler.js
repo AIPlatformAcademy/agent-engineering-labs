@@ -1,6 +1,4 @@
-import {
-  ApplicationError
-} from '../errors/application-error.js';
+import { ApplicationError } from '../errors/application-error.js';
 
 export function errorHandler(error, req, res, _next) {
   if (error instanceof ApplicationError) {

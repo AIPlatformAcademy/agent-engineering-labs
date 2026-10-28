@@ -1,19 +1,7 @@
 import request from 'supertest';
-
-import {
-  beforeEach,
-  describe,
-  expect,
-  it
-} from 'vitest';
-
-import {
-  createApp
-} from '../../../src/app.js';
-
-import {
-  resetData
-} from '../helpers/reset-data.js';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { createApp } from '../../../src/app.js';
+import { resetData } from '../helpers/reset-data.js';
 
 const app = createApp();
 

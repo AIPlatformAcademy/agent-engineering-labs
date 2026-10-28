@@ -10,8 +10,6 @@ Completa:
 
 con las reglas generales que quieres que Copilot siga cuando trabaje en UniPay.
 
----
-
 # 🧩 ¿Qué debes crear?
 
 Escribe entre:
@@ -43,8 +41,6 @@ Tus Instructions deben cubrir estos cinco aspectos:
 ¿Qué debe hacer si necesita una regla que no conoce?
 ```
 
----
-
 # 💡 Regla para decidir
 
 Antes de escribir una Instruction, pregunta:
@@ -61,8 +57,6 @@ NO
 ↓
 Probablemente pertenece al prompt ❌
 ```
-
----
 
 # 🚧 Evita instrucciones específicas
 
@@ -81,8 +75,6 @@ Modifica transfer.service.js.
 ```
 
 Son instrucciones específicas de una tarea.
-
----
 
 # 🛠 Construye el archivo
 
@@ -116,8 +108,6 @@ No copies las cuatro Instructions utilizadas en la demo.
 
 Ahora debes definir las reglas que consideres apropiadas para UniPay.
 
----
-
 # 🧪 Comprueba tus Instructions
 
 Abre una conversación nueva con Copilot.
@@ -131,8 +121,6 @@ Analiza el cambio y propón cómo lo implementarías.
 
 No realices cambios todavía.
 ```
-
----
 
 # 🔎 Busca evidencia
 
@@ -152,8 +140,6 @@ Comprueba si tu respuesta refleja las reglas que escribiste:
 
 Si una Instruction no produce un comportamiento claro, revísala.
 
----
-
 # ✅ Reto completado
 
 Tu archivo está listo cuando:
@@ -170,8 +156,6 @@ Tu archivo está listo cuando:
 ✅ Puedes observar sus efectos en la respuesta de Copilot.
 ```
 
----
-
 # ⭐ Qué debes recordar
 
 ```text
@@ -186,8 +170,6 @@ Definen cómo queremos trabajar
 ```
 
 > **Una buena Instruction no resuelve una tarea. Define una regla reutilizable para trabajar en el proyecto.**
-
----
 
 # 🚀 Siguiente nivel
 

@@ -6,8 +6,6 @@ Vamos a comprobar una idea:
 
 Utilizaremos el mismo prompt dos veces.
 
----
-
 # Nuestro requerimiento
 
 Queremos añadir:
@@ -23,8 +21,6 @@ id
 nombre
 saldo actual
 ```
-
----
 
 # 🔴 Prueba 1 — Sin Instructions
 
@@ -61,8 +57,6 @@ No realices cambios todavía.
 No buscamos que Copilot responda mal.
 
 Queremos observar qué decisiones debe tomar **sin conocer nuestras reglas de trabajo**.
-
----
 
 # 🟢 Prueba 2 — Con Instructions
 
@@ -106,8 +100,6 @@ Analiza el cambio y propón cómo lo implementarías.
 No realices cambios todavía.
 ```
 
----
-
 # Compara
 
 Busca nuestras Instructions en la respuesta:
@@ -123,8 +115,6 @@ Tests                     [ ]
 
 Sin dependencias nuevas   [ ]
 ```
-
----
 
 # ¿Qué cambió?
 
@@ -148,8 +138,6 @@ Solo añadimos:
 ✅ cómo queremos trabajar
 ```
 
----
-
 # Qué debes recordar
 
 ```text
@@ -166,8 +154,6 @@ El proyecto declara cómo queremos trabajar.
 Por eso:
 
 > **Prompt = QUÉ necesitamos. Instructions = CÓMO queremos trabajar.**
-
----
 
 # Siguiente paso
 

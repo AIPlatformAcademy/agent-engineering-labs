@@ -2,7 +2,7 @@
   "name": "unipay-agentic-lab",
   "version": "1.0.0",
   "private": true,
-  "description": "Laboratorio de ingeniería de agentes y SDLC con GitHub Copilot",
+  "description": "Laboratorio de Ingeniería de Agentes y SDLC con GitHub Copilot",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

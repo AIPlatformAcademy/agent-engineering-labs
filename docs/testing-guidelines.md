@@ -20,8 +20,6 @@ Supertest
 
 para probar el comportamiento HTTP de la aplicación.
 
----
-
 # Organización
 
 Los tests están organizados de la siguiente manera:
@@ -39,8 +37,6 @@ tests/
 └── helpers/
     └── reset-data.js
 ```
-
----
 
 # Tests unitarios
 
@@ -66,8 +62,6 @@ registrar correctamente una transferencia válida.
 
 Los tests unitarios deben enfocarse en comportamiento observable.
 
----
-
 # Tests de integración
 
 Los tests de integración validan el contrato HTTP utilizando la aplicación Express.
@@ -89,8 +83,6 @@ código de error;
 creación correcta de recursos;
 comportamiento observable de endpoints.
 ```
-
----
 
 # Aislamiento
 
@@ -116,8 +108,6 @@ restablece estudiantes y transferencias.
 
 Los tests no deben depender del orden de ejecución de otros tests.
 
----
-
 # Estrategia para corrección de bugs
 
 Las correcciones de defectos deben seguir este flujo:
@@ -140,8 +130,6 @@ Ejecutar suite completa
 
 Antes de modificar la implementación de un bug debe existir una prueba que demuestre el comportamiento incorrecto cuando sea viable reproducirlo mediante test automatizado.
 
----
-
 # Evidencia de una corrección
 
 Una corrección no se considera validada únicamente porque el código parezca correcto.
@@ -156,8 +144,6 @@ Para un comportamiento rechazado relacionado con una transferencia, verificar se
 4. que el balance del receptor no cambie;
 5. que no se registre una transferencia completada.
 
----
-
 # Regresiones
 
 Después de validar los tests directamente relacionados con un cambio, debe ejecutarse la suite completa.
@@ -169,8 +155,6 @@ npm test
 ```
 
 El objetivo es detectar posibles regresiones sobre comportamiento existente.
-
----
 
 # Principios
 
@@ -189,8 +173,6 @@ Los tests no deben:
 - ocultar un fallo para conseguir una suite verde;
 - eliminar assertions existentes simplemente para hacer pasar la prueba;
 - considerarse exitosos si no fueron ejecutados.
-
----
 
 # Definición mínima de terminado
 

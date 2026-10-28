@@ -4,8 +4,6 @@
 
 Construir un especialista capaz de reconocer una misión y elegir cómo abordarla.
 
----
-
 ## 🧭 Recorrido
 
 ```mermaid
@@ -38,12 +36,10 @@ UniPay SDLC Engineer
 
 y definirás una estrategia para cada tipo de misión.
 
----
-
 ## 🚀 Empecemos
 
 Continúa con:
 
 ```text
-01-concepto.md
+01-conceptos.md
 ```
