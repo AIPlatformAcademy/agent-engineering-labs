@@ -1,28 +1,10 @@
 import express from 'express';
-
-import {
-  studentRouter
-} from './routes/student.routes.js';
-
-import {
-  transferRouter
-} from './routes/transfer.routes.js';
-
-import {
-  requestId
-} from './middleware/request-id.js';
-
-import {
-  developmentCors
-} from './middleware/cors.js';
-
-import {
-  notFound
-} from './middleware/not-found.js';
-
-import {
-  errorHandler
-} from './middleware/error-handler.js';
+import { studentRouter } from './routes/student.routes.js';
+import { transferRouter } from './routes/transfer.routes.js';
+import { requestId } from './middleware/request-id.js';
+import { developmentCors } from './middleware/cors.js';
+import { notFound } from './middleware/not-found.js';
+import { errorHandler } from './middleware/error-handler.js';
 
 export function createApp() {
   const app = express();

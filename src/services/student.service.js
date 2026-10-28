@@ -1,11 +1,5 @@
-import {
-  findAllStudents,
-  findStudentById
-} from '../repositories/student.repository.js';
-
-import {
-  ApplicationError
-} from '../errors/application-error.js';
+import { findAllStudents, findStudentById } from '../repositories/student.repository.js';
+import { ApplicationError } from '../errors/application-error.js';
 
 export function getAllStudents() {
   return findAllStudents();

@@ -1,8 +1,5 @@
 import { randomUUID } from 'node:crypto';
-
-import {
-  initialTransfers
-} from '../data/seed.js';
+import { initialTransfers } from '../data/seed.js';
 
 let transfers = structuredClone(initialTransfers);
 
