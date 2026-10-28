@@ -1,7 +1,4 @@
-import {
-  getAllStudents,
-  getStudent
-} from '../services/student.service.js';
+import { getAllStudents, getStudent } from '../services/student.service.js';
 
 export function getStudents(req, res) {
   const students = getAllStudents();

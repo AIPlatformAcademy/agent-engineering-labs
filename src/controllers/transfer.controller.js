@@ -1,7 +1,4 @@
-import {
-  createTransfer,
-  getTransfers
-} from '../services/transfer.service.js';
+import { createTransfer, getTransfers } from '../services/transfer.service.js';
 
 export function postTransfer(req, res) {
   const transfer = createTransfer(req.body);
