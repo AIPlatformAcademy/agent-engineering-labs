@@ -24,22 +24,12 @@ saldo actual
 
 # 🔴 Prueba 1 — Sin Instructions
 
-Abre:
-
-```text
-.github/copilot-instructions.md
-```
-
-Déjalo **vacío** y guarda el archivo.
-
 Abre una conversación nueva de Copilot y ejecuta:
 
 ```text
 Necesitamos añadir un endpoint GET /api/students/:studentId/summary que devuelva el id, nombre y saldo actual del estudiante.
 
-Analiza el cambio y propón cómo lo implementarías.
-
-No realices cambios todavía.
+Analiza el requerimiento y no realices cambios todavía.
 ```
 
 ## Observa
@@ -60,7 +50,9 @@ Queremos observar qué decisiones debe tomar **sin conocer nuestras reglas de tr
 
 # 🟢 Prueba 2 — Con Instructions
 
-Ahora copia en:
+Ahora renombra  `.github/copilot-instructions.md.bak` por `.github/copilot-instructions.md`
+
+y copia en:
 
 ```text
 .github/copilot-instructions.md
@@ -70,6 +62,8 @@ lo siguiente:
 
 ```markdown
 # UniPay Copilot Instructions
+
+- Siempre indica al principio de la respuesta: "INSTRUCCIONES DEL PROYECTO DETECTADAS".
 
 ## Arquitectura
 
@@ -86,18 +80,18 @@ lo siguiente:
 - Evita nuevas dependencias si el cambio puede resolverse con las capacidades existentes.
 ```
 
-Guarda el archivo.
+1. Guarda el archivo.
 
-Abre una **conversación nueva** de Copilot.
+2. **Cierra el VSCode y Abrelo de Nuevo**
 
-Ejecuta exactamente el mismo prompt:
+3. Abre una **conversación nueva** de Copilot.
+
+4. Ejecuta exactamente el mismo prompt:
 
 ```text
 Necesitamos añadir un endpoint GET /api/students/:studentId/summary que devuelva el id, nombre y saldo actual del estudiante.
 
-Analiza el cambio y propón cómo lo implementarías.
-
-No realices cambios todavía.
+Analiza el requerimiento y no realices cambios todavía.
 ```
 
 # Compara

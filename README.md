@@ -1,8 +1,9 @@
-# Laboratorio de Ingeniería de Agentes y SDLC con GitHub Copilot
+# Laboratorio de Ingeniería de Agentes y SDLC con GitHub Copilot.
 
 Este repositorio forma parte de un laboratorio práctico guiado sobre Ingeniería de Agentes con GitHub Copilot. En este laboratorio, no se creará una aplicación desde cero, sino que se trabajará sobre un sistema existente para aprender a utilizar contexto, instrucciones y Agentes especializados para resolver tareas dentro de un flujo de desarrollo de software.
 
 En este sentido, **UniPay** es una API desarrollada con Node.js y Express que simula una plataforma sencilla de transferencias entre estudiantes, sirviendo como base para este ejercicio.
+
 
 ## Objetivo
 

@@ -117,9 +117,7 @@ Ejecuta:
 ```text
 Necesitamos añadir un endpoint GET /api/students/:studentId/summary que devuelva el id, nombre y saldo actual del estudiante.
 
-Analiza el cambio y propón cómo lo implementarías.
-
-No realices cambios todavía.
+Analiza el requerimiento y no realices cambios todavía.
 ```
 
 # 🔎 Busca evidencia
