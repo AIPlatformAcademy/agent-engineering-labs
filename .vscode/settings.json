@@ -1,0 +1,9 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "files.eol": "\r\n",
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.endOfLine": "crlf"
+}
