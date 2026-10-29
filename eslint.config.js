@@ -33,6 +33,7 @@ export default [
   },
   {
     files: [
+      'src/tests/**/*.js',
       'tests/**/*.js'
     ],
     languageOptions: {
