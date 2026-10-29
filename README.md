@@ -107,7 +107,7 @@ npm run lint
 
 ## Validación completa
 
-Puedes ejecutar lint y tests medante:
+Puedes ejecutar lint y tests mediante:
 
 ```bash
 npm run check
@@ -138,24 +138,23 @@ HTTP Request
     Data
 ```
 
-La descripción completa las encuentras en **Responsabilidades Arquitectónicas**. [Leer](/docs/architecture.md)
+La descripción completa la encuentras en **Responsabilidades Arquitectónicas**. [Leer](./docs/architecture.md)
 
 ## Estructura principal
 
 ```text
 src/
-|── controllers/
+├── controllers/
 ├── services/
 ├── repositories/
 ├── routes/
 ├── middleware/
 ├── errors/
-└── data/
-
-tests
-├── unit/
-├── integration/
-└── helpers/
+├── data/
+└── tests/
+    ├── unit/
+    ├── integration/
+    └── helpers/
 
 docs/
 ├── architecture.md
@@ -205,7 +204,7 @@ openapi.yaml
 
 ## Importante
 
-Este repositorio representa una aplicación existente sobre la que continuarás trabajando. Que la aplicación arranque y la suite actual de test pase correctamente no implica necesariamente que todos los comportamientos posibles estén cubiertos por los tests existentes.
+Este repositorio representa una aplicación existente sobre la que continuarás trabajando. Que la aplicación arranque y la suite actual de tests pase correctamente no implica necesariamente que todos los comportamientos posibles estén cubiertos por los tests existentes.
 
 Cuando trabajes sobre un requerimiento o incidente:
 
@@ -217,4 +216,4 @@ Cuando trabajes sobre un requerimiento o incidente:
 6. Realiza cambios pequeños y justificados.
 7. Utiliza tests como evidencia del resultado.
 
-El objetivo no es únicamemete modificar código, sino poder explicar por qué el cambio realizado es coherente con el sistema.
+El objetivo no es únicamente modificar código, sino poder explicar por qué el cambio realizado es coherente con el sistema.
