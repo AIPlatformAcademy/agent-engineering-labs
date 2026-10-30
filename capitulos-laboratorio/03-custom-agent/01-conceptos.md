@@ -46,13 +46,13 @@ En VS Code, un Custom Agent puede definir su comportamiento, herramientas y opci
 Crearemos:
 
 ```text
-unipay-sdlc-engineer.agent
+unipay-sdlc-engineer-lab.agent
 ```
 
 en:
 
 ```text
-.github/agents/unipay-sdlc-engineer.agent.md
+.github/agents/unipay-sdlc-engineer-lab.agent.md
 ```
 
 # 🧠 ¿Qué aporta?
