@@ -1,8 +1,9 @@
-# Laboratorio de Ingeniería de Agentes y SDLC con GitHub Copilot
+# Laboratorio de Ingeniería de Agentes y SDLC con GitHub Copilot.
 
 Este repositorio forma parte de un laboratorio práctico guiado sobre Ingeniería de Agentes con GitHub Copilot. En este laboratorio, no se creará una aplicación desde cero, sino que se trabajará sobre un sistema existente para aprender a utilizar contexto, instrucciones y Agentes especializados para resolver tareas dentro de un flujo de desarrollo de software.
 
 En este sentido, **UniPay** es una API desarrollada con Node.js y Express que simula una plataforma sencilla de transferencias entre estudiantes, sirviendo como base para este ejercicio.
+
 
 ## Objetivo
 
@@ -107,7 +108,7 @@ npm run lint
 
 ## Validación completa
 
-Puedes ejecutar lint y tests medante:
+Puedes ejecutar lint y tests mediante:
 
 ```bash
 npm run check
@@ -138,24 +139,23 @@ HTTP Request
     Data
 ```
 
-La descripción completa las encuentras en **Responsabilidades Arquitectónicas**. [Leer](/docs/architecture.md)
+La descripción completa la encuentras en **Responsabilidades Arquitectónicas**. [Leer](./docs/architecture.md)
 
 ## Estructura principal
 
 ```text
 src/
-|── controllers/
+├── controllers/
 ├── services/
 ├── repositories/
 ├── routes/
 ├── middleware/
 ├── errors/
-└── data/
-
-tests
-├── unit/
-├── integration/
-└── helpers/
+├── data/
+└── tests/
+    ├── unit/
+    ├── integration/
+    └── helpers/
 
 docs/
 ├── architecture.md
@@ -205,7 +205,7 @@ openapi.yaml
 
 ## Importante
 
-Este repositorio representa una aplicación existente sobre la que continuarás trabajando. Que la aplicación arranque y la suite actual de test pase correctamente no implica necesariamente que todos los comportamientos posibles estén cubiertos por los tests existentes.
+Este repositorio representa una aplicación existente sobre la que continuarás trabajando. Que la aplicación arranque y la suite actual de tests pase correctamente no implica necesariamente que todos los comportamientos posibles estén cubiertos por los tests existentes.
 
 Cuando trabajes sobre un requerimiento o incidente:
 
@@ -217,4 +217,4 @@ Cuando trabajes sobre un requerimiento o incidente:
 6. Realiza cambios pequeños y justificados.
 7. Utiliza tests como evidencia del resultado.
 
-El objetivo no es únicamemete modificar código, sino poder explicar por qué el cambio realizado es coherente con el sistema.
+El objetivo no es únicamente modificar código, sino poder explicar por qué el cambio realizado es coherente con el sistema.
