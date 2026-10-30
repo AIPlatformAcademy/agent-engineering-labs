@@ -2,6 +2,5 @@ node_modules/
 dist/
 coverage/
 .env
-material-instructor
 package-lock.json
 .DS_Store
