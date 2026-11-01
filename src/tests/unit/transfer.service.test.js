@@ -1,6 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { createTransfer, getTransfers } from '../../../src/services/transfer.service.js';
-import { findStudentById } from '../../../src/repositories/student.repository.js';
+import {
+  findStudentById,
+  updateStudentBalance
+} from '../../../src/repositories/student.repository.js';
 import { findAllTransfers } from '../../../src/repositories/transfer.repository.js';
 import { resetData } from '../helpers/reset-data.js';
 
@@ -58,6 +61,30 @@ describe('transfer service', () => {
       amount: 25,
       status: 'COMPLETED'
     });
+  });
+
+  it('rechaza una transferencia con saldo insuficiente sin modificar balances ni registrarla', () => {
+    updateStudentBalance('stu-001', 10);
+
+    let transferError;
+
+    try {
+      createTransfer({
+        senderId: 'stu-001',
+        receiverId: 'stu-002',
+        amount: 25
+      });
+    } catch (error) {
+      transferError = error;
+    }
+
+    expect(transferError).toMatchObject({
+      code: 'INSUFFICIENT_BALANCE',
+      statusCode: 422
+    });
+    expect(findStudentById('stu-001').balance).toBe(10);
+    expect(findStudentById('stu-002').balance).toBe(80);
+    expect(findAllTransfers()).toHaveLength(0);
   });
 
   it('rechaza una transferencia si el emisor no existe', () => {
