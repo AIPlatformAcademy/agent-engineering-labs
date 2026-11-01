@@ -5,7 +5,7 @@
 Completa:
 
 ```text
-.github/agents/unipay-sdlc-engineer.agent.md
+.github/agents/unipay-sdlc-engineer-lab.agent.md
 ```
 
 El agente debe reconocer:
@@ -27,13 +27,13 @@ Copia esta base:
 
 ```markdown
 ---
-name: unipay-sdlc-engineer.agent
+name: unipay-sdlc-engineer-lab.agent
 description: Especialista en desarrollar Issues y resolver incidentes de UniPay.
 ---
 
 # Misión
 
-Eres el unipay-sdlc-engineer.agent.
+Eres el unipay-sdlc-engineer-lab.agent.
 
 Clasifica la misión como ISSUE o INCIDENT y selecciona la estrategia adecuada.
 
@@ -150,7 +150,7 @@ Tu agente debe centrarse en la estrategia.
 Selecciona:
 
 ```text
-unipay-sdlc-engineer.agent
+unipay-sdlc-engineer-lab.agent
 ```
 
 ## 🛠️ ISSUE

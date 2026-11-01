@@ -15,14 +15,14 @@ DOS MISIONES
 Abre:
 
 ```text
-.github/agents/unipay-sdlc-engineer.agent.md
+.github/agents/unipay-sdlc-engineer-lab.agent.md
 ```
 
 Copia este agente de demostración:
 
 ```markdown
 ---
-name: unipay-sdlc-engineer.agent
+name: unipay-sdlc-engineer-lab.agent
 description: Especialista de demostración para clasificar misiones de UniPay.
 ---
 
@@ -50,12 +50,12 @@ Guarda el archivo.
 Selecciona en GitHub Copilot:
 
 ```text
-unipay-sdlc-engineer.agent
+unipay-sdlc-engineer-lab.agent
 ```
 
 # 🧪 Prueba 1 — Nueva capacidad
 
-Abre un chat nuevo, cambia el modo Agent por ´unipay-sdlc-engineer.agent´ y pega el siguinte prompt:
+Abre un chat nuevo, cambia el modo Agent por ´unipay-sdlc-engineer-lab.agent´ y pega el siguinte prompt:
 
 ```text
 Necesitamos añadir un endpoint GET /api/transfers/:transferId para consultar una transferencia por su identificador.
@@ -203,7 +203,7 @@ El agente utilizado en esta demo es solo un ejemplo para aprender a clasificar m
 Vacía nuevamente:
 
 ```text
-.github/agents/unipay-sdlc-engineer.agent.md
+.github/agents/unipay-sdlc-engineer-lab.agent.md
 ```
 
 # 🚀 Tu turno
@@ -211,7 +211,7 @@ Vacía nuevamente:
 Ahora construirás el verdadero:
 
 ```text
-unipay-sdlc-engineer.agent
+unipay-sdlc-engineer-lab.agent
 ```
 
 Continúa con:

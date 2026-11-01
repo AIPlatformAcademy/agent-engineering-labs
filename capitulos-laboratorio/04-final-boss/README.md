@@ -15,7 +15,7 @@ UL-102
 Selecciona:
 
 ```text
-unipay-sdlc-engineer.agent
+unipay-sdlc-engineer-lab.agent
 ```
 
 Abre un chat nuevo y ejecuta únicamente:
