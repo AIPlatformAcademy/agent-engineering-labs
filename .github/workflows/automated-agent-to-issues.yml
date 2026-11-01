@@ -43,6 +43,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.COPILOT_AGENT_TOKEN }}
           REPOSITORY: ${{ github.repository }}
+          ACTOR: ${{ github.actor }}
           EVENT_ISSUE: ${{ github.event.issue.number }}
           INPUT_ISSUE: ${{ inputs.issue_number }}
           BASE_BRANCH: automated-agent-to-issues
@@ -69,6 +70,22 @@ jobs:
             -H "Accept: application/vnd.github+json"
             -H "X-GitHub-Api-Version: 2022-11-28"
           )
+
+          # Only repository writers, maintainers, and administrators can trigger agent execution.
+          PERMISSION=$(curl --fail-with-body --silent --show-error \
+            "${HEADERS[@]}" \
+            "${API}/collaborators/${ACTOR}/permission" |
+            jq -r '.permission // "none"')
+
+          case "$PERMISSION" in
+            write|maintain|admin)
+              echo "Actor authorized: $PERMISSION"
+              ;;
+            *)
+              echo "::error::Actor $ACTOR does not have permission to trigger the agent"
+              exit 1
+              ;;
+          esac
 
           ISSUE_FILE=$(mktemp)
           INSTRUCTIONS_FILE=$(mktemp)
