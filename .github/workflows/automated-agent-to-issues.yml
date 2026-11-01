@@ -1,0 +1,254 @@
+
+name: Automated Agent to Issues
+
+on:
+  issues:
+    types: [labeled]
+
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to assign to Copilot"
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: copilot-agent-${{ github.event.issue.number || inputs.issue_number || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  assign-agent:
+    name: Assign UniPay SDLC Engineer
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (
+          github.event_name == 'issues' &&
+          github.event.action == 'labeled' &&
+          github.event.label.name == 'agent:run' &&
+          github.event.issue.pull_request == null
+        )
+      )
+
+    steps:
+      - name: Validate Issue and load project instructions
+        id: context
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.COPILOT_AGENT_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          EVENT_ISSUE: ${{ github.event.issue.number }}
+          INPUT_ISSUE: ${{ inputs.issue_number }}
+          BASE_BRANCH: automated-agent-to-issues
+
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$TOKEN" ]]; then
+            echo "::error::COPILOT_AGENT_TOKEN is missing"
+            exit 1
+          fi
+
+          ISSUE_NUMBER="${EVENT_ISSUE:-$INPUT_ISSUE}"
+
+          if [[ ! "$ISSUE_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+            echo "::error::Invalid Issue number"
+            exit 1
+          fi
+
+          API="https://api.github.com/repos/${REPOSITORY}"
+
+          HEADERS=(
+            -H "Authorization: Bearer ${TOKEN}"
+            -H "Accept: application/vnd.github+json"
+            -H "X-GitHub-Api-Version: 2022-11-28"
+          )
+
+          ISSUE_FILE=$(mktemp)
+          INSTRUCTIONS_FILE=$(mktemp)
+
+          trap 'rm -f "$ISSUE_FILE" "$INSTRUCTIONS_FILE"' EXIT
+
+          # Retrieve Issue
+          curl --fail-with-body --silent --show-error \
+            "${HEADERS[@]}" \
+            "${API}/issues/${ISSUE_NUMBER}" \
+            -o "$ISSUE_FILE"
+
+          # Validate Issue state, type and label
+          jq -e '
+            .state == "open" and
+            (has("pull_request") | not) and
+            any(.labels[]?; .name == "agent:run")
+          ' "$ISSUE_FILE" > /dev/null
+
+          # Retrieve project instructions from the working branch
+          curl --fail-with-body --silent --show-error \
+            "${HEADERS[@]}" \
+            "${API}/contents/.github/copilot-instructions.md?ref=${BASE_BRANCH}" \
+            -o "$INSTRUCTIONS_FILE"
+
+          PROJECT_INSTRUCTIONS=$(
+            jq -er '.content' "$INSTRUCTIONS_FILE" |
+            tr -d '\n' |
+            base64 --decode
+          )
+
+          if [[ -z "$PROJECT_INSTRUCTIONS" ]]; then
+            echo "::error::Project instructions are empty"
+            exit 1
+          fi
+
+          echo "issue_number=${ISSUE_NUMBER}" >> "$GITHUB_OUTPUT"
+          echo "Project instructions loaded successfully"
+
+      - name: Verify Copilot availability
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.COPILOT_AGENT_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+
+        run: |
+          set -euo pipefail
+
+          OWNER="${REPOSITORY%%/*}"
+          REPO_NAME="${REPOSITORY#*/}"
+
+          QUERY='query($owner: String!, $name: String!) {
+            repository(owner: $owner, name: $name) {
+              suggestedActors(
+                capabilities: [CAN_BE_ASSIGNED],
+                first: 100
+              ) {
+                nodes {
+                  login
+                  __typename
+                }
+              }
+            }
+          }'
+
+          PAYLOAD=$(jq -n \
+            --arg query "$QUERY" \
+            --arg owner "$OWNER" \
+            --arg name "$REPO_NAME" \
+            '{
+              query: $query,
+              variables: {
+                owner: $owner,
+                name: $name
+              }
+            }')
+
+          RESPONSE=$(curl --fail-with-body --silent --show-error \
+            -X POST https://api.github.com/graphql \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Content-Type: application/json" \
+            -H "Accept: application/vnd.github+json" \
+            --data "$PAYLOAD")
+
+          COPILOT=$(jq -r '
+            .data.repository.suggestedActors.nodes[]?
+            | select(.login == "copilot-swe-agent")
+            | .login
+          ' <<< "$RESPONSE")
+
+          if [[ "$COPILOT" != "copilot-swe-agent" ]]; then
+            echo "::error::Copilot Cloud Agent is not available"
+            exit 1
+          fi
+
+          echo "Copilot Cloud Agent is available"
+
+      - name: Assign custom agent
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.COPILOT_AGENT_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ steps.context.outputs.issue_number }}
+          BASE_BRANCH: automated-agent-to-issues
+
+        run: |
+          set -euo pipefail
+
+          API="https://api.github.com/repos/${REPOSITORY}"
+          ISSUE_API="${API}/issues/${ISSUE_NUMBER}"
+
+          HEADERS=(
+            -H "Authorization: Bearer ${TOKEN}"
+            -H "Accept: application/vnd.github+json"
+            -H "X-GitHub-Api-Version: 2022-11-28"
+          )
+
+          PROJECT_INSTRUCTIONS=$(curl --fail-with-body \
+            --silent --show-error \
+            "${HEADERS[@]}" \
+            "${API}/contents/.github/copilot-instructions.md?ref=${BASE_BRANCH}" |
+            jq -er '.content' |
+            tr -d '\n' |
+            base64 --decode)
+
+          ISSUE_DATA=$(curl --fail-with-body \
+            --silent --show-error \
+            "${HEADERS[@]}" \
+            "$ISSUE_API")
+
+          if jq -e '
+            any(.assignees[]?;
+              .login == "copilot-swe-agent[bot]"
+            )
+          ' <<< "$ISSUE_DATA" > /dev/null; then
+            echo "Copilot is already assigned. Skipping."
+            exit 0
+          fi
+
+          CUSTOM_INSTRUCTIONS=$(printf '%s\n\n%s' \
+            "Follow these project instructions:" \
+            "$PROJECT_INSTRUCTIONS")
+
+          PAYLOAD=$(jq -n \
+            --arg repo "$REPOSITORY" \
+            --arg branch "$BASE_BRANCH" \
+            --arg agent "unipay-sdlc-engineer" \
+            --arg instructions "$CUSTOM_INSTRUCTIONS" \
+            '{
+              assignees: ["copilot-swe-agent[bot]"],
+              agent_assignment: {
+                target_repo: $repo,
+                base_branch: $branch,
+                custom_agent: $agent,
+                custom_instructions: $instructions
+              }
+            }')
+
+          RESPONSE_FILE=$(mktemp)
+          trap 'rm -f "$RESPONSE_FILE"' EXIT
+
+          HTTP_STATUS=$(curl --silent --show-error \
+            --output "$RESPONSE_FILE" \
+            --write-out "%{http_code}" \
+            --request POST \
+            "${HEADERS[@]}" \
+            -H "Content-Type: application/json" \
+            --data "$PAYLOAD" \
+            "${ISSUE_API}/assignees")
+
+          if [[ ! "$HTTP_STATUS" =~ ^2[0-9][0-9]$ ]]; then
+            echo "::error::GitHub API returned HTTP $HTTP_STATUS"
+            jq -r '.message // "Unknown API error"' "$RESPONSE_FILE"
+            exit 1
+          fi
+
+          echo "Copilot assignment successful"
+
+          jq '{
+            number,
+            html_url,
+            assignees: [.assignees[].login]
+          }' "$RESPONSE_FILE"
