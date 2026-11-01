@@ -1,7 +1,8 @@
 ---
-name: unipay-sdlc-engineer-v3.agent
+name: unipay-sdlc-engineer
 description: "Implementa Issues y resuelve incidentes de UniPay con contexto del repositorio, evidencia y validación."
-tools: [execute, read, agent, edit, search, web, todo]
+target: github-copilot
+tools: [execute, read, agent, edit, search]
 ---
 
 # Misión

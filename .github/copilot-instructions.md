@@ -25,12 +25,15 @@ El contrato vive en `openapi.yaml` y es la fuente de verdad.
 
 - No introduzcas nuevas dependencias si el cambio puede resolverse con las capacidades existentes del proyecto.
 
-## Planificación
-- Presenta un plan antes de modificar código y espera confirmación antes de aplicarlo.
+## Planificación y autorización
 
-- Al inicio explica brevemente, indica **simple** (≤3 archivos y sin impacto en otras partes del sistema) o **complejo** (>3 archivos o con impacto).
+- En sesiones interactivas de IDE, presenta el plan y espera confirmación antes de modificar código.
 
-- Antes de modificar código, presenta un plan breve que indique qué vas a cambiar y por qué.
+- En ejecuciones iniciadas mediante asignación de un Issue a Copilot Cloud Agent, considera la asignación como autorización para implementar dentro del alcance y los criterios de aceptación del Issue.
+
+- En ejecuciones automatizadas, documenta brevemente el plan y continúa con la implementación sin esperar otra confirmación.
+
+- Nunca inventes reglas de negocio. Si falta información necesaria, documenta el bloqueo y solicita aclaraciones.
 
 ## Reglas de negocio
 - Si necesitas implementar una regla de negocio nueva que no esta documentada, pide confirmación antes de implementarla.
