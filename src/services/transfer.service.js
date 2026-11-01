@@ -41,6 +41,14 @@ export function createTransfer({
     );
   }
 
+  if (sender.balance < amount) {
+    throw new ApplicationError(
+      'INSUFFICIENT_BALANCE',
+      'Insufficient balance for this transfer',
+      422
+    );
+  }
+
   updateStudentBalance(
     senderId,
     sender.balance - amount
